@@ -42,7 +42,7 @@ $gems =
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Using a foreach key value Loop</title>
+    <title>Gemstone Arrays</title>
     <style>
         #gems {margin:0px;padding:0px;border: solid 1px #666;}
         #gems td {padding:10px;border: solid 1px #666;}
@@ -64,7 +64,7 @@ $gems =
     </tr>
     <?php foreach($gems as $gem) {
         $n[]=$gem['mohs'];
-        //the above statement creates an array by adding the moh's numbers each type it loops through the array
+        //the above statement creates an array by saving the moh's number as it loops through each array
         ?>
     <tr>
         <td><?php print $gem ["name"]; ?></td>
@@ -77,7 +77,18 @@ $gems =
    <?php } ?>
 </table>
 <p>The hardness of the gems ranges from <?php print min($n); ?> to <?php print max($n); ?>.</p>
+<p>The gems sorted alphabetically:</p>
 
+<ul>
+    <?php //sorts gem name alphabetically
+    $gems = ['diamond', 'saphhire', 'ruby', 'emerald'];
+    sort($gems);
+
+    foreach ($gems as $gem) {
+        echo "<li>$gem</li>";
+    }
+    ?>
+</ul>
 
 </body>
 </html>
